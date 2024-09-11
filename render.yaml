@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spam-detector-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+
+  - type: web
+    name: spam-detector-dashboard
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run dashboard.py"
